@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tuomas Levoniemi – Esittely</title>
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7fa; color: #222; margin: 0; }
+    
+    /* Englannin lippu yläoikealle - FIXED position */
+    .english-flag {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 1000;
+    }
+    .english-flag a {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      background-color: white;
+      border: 1px solid #012169; /* Sininen väri Union Jackista */
+      border-radius: 4px;
+      text-decoration: none;
+      color: #012169;
+      font-weight: bold;
+      font-size: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: all 0.2s;
+    }
+    .english-flag a:hover {
+      background-color: #f0f7ff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .english-flag img {
+      width: 24px;
+      height: 16px;
+      margin-right: 8px;
+      border: 1px solid #ddd;
+    }
+    
+    .container { 
+      max-width: 900px; 
+      margin: 40px auto; 
+      background: #fff; 
+      border-radius: 10px; 
+      box-shadow: 0 2px 16px #cfd8dc; 
+      padding: 40px 32px; 
+      position: relative; 
+      z-index: 1; 
+    }
+    header { display: flex; align-items: center; gap: 32px; margin-bottom: 32px; }
+    .profile-img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; background: #e3eaf2; }
+    h1 { color: #2a4d8f; margin-bottom: 4px; }
+    h2 { color: #2a4d8f; margin-top: 32px; margin-bottom: 10px; }
+    .section { margin-bottom: 32px; }
+    ul { margin-top: 0; margin-bottom: 0; }
+    .skills, .certs, .projects, .hobbies { columns: 2; column-gap: 40px; }
+    .contact { margin-top: 24px; font-size: 1.1em; }
+    .linkedin-btn {
+      display: inline-block; background: #0a66c2; color: #fff; padding: 10px 22px; border-radius: 4px;
+      text-decoration: none; font-weight: bold; margin-top: 12px; transition: background 0.2s;
+    }
+    .linkedin-btn:hover { background: #084a8c; }
+    .quote { font-style: italic; color: #555; margin: 18px 0; }
+    @media (max-width: 700px) {
+      .container { padding: 16px; margin-top: 60px; }
+      header { flex-direction: column; gap: 12px; }
+      .skills, .certs, .projects, .hobbies { columns: 1; }
+      .english-flag {
+        top: 10px;
+        right: 10px;
+      }
+      .english-flag a {
+        padding: 4px 8px;
+        font-size: 12px;
+      }
+      .english-flag img {
+        width: 20px;
+        height: 13px;
+        margin-right: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Englannin lippu kiinnitetty yläoikealle -->
+  <div class="english-flag">
+    <a href="https://tuokki1.github.io" target="_blank">
+      <img src="https://flagcdn.com/w40/gb.png" alt="Englannin lippu">
+      English
+    </a>
+  </div>
+
+  <div class="container">
+    <header>
+      <img src="https://media.licdn.com/dms/image/v2/D4D03AQGRTExXreB0lA/profile-displayphoto-shrink_400_400/B4DZdRXB39H4Ao-/0/1749416681454?e=1769040000&v=beta&t=vJJ9ajZlgfKcj4D8EXeWgS-YjJYvv0zrNRc5UyprE7g" alt="Tuomas Levoniemi" class="profile-img">
+      <div>
+        <h1>Tuomas Levoniemi</h1>
+        <p><strong>Senior Advisor – Helsinki</strong></p>
+        <div class="quote">"Teknologia mahdollistaa, mutta ihmiset tekevät muutoksen – yhdistän pilvi- ja infraosaamisen käytännön kehitykseen ja asiakaskokemukseen."</div>
+      </div>
+    </header>
+
+    <div class="section">
+      <h2>Yhteenveto</h2>
+      <p>
+        Olen kokenut IT-asiantuntija ja -arkkitehti, jonka ydinosaaminen kattaa pilvi- ja hybridipalvelut, tietoturvan, palvelukehityksen sekä teknologian strategisen hyödyntämisen. Työskentelen Senior Cloud Advisorina ja Hybrid IT -asiantuntijana Helsingissä. Minulla on yli 28 vuoden kokemus IT-alalta, ja olen toiminut mm. konsulttina, kehityspäällikkönä, infra-arkkitehtina ja palveluomistajana. 
+        <br><br>
+        Viime vuosina olen keskittynyt erityisesti pilvi- ja infra-arkkitehtuuriin (Azure/GCP), tietoturvaan (SOC/DFIR/OSINT-koulutukset), DevOps-käytäntöihin ja organisaatioiden pilvityöpajojen fasilitointiin.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Avainosaamiset</h2>
+      <ul class="skills">
+        <li>Pilvi ja Hybrid IT: Microsoft Azure, Google Cloud; Azure governance ja migraatiot</li>
+        <li>Infrastruktuuri: Windows Server & työasemat, Linux (Red Hat/SUSE), verkot, identiteetti (IAM)</li>
+        <li>Tietoturva: SOC-käytännöt, forensiikka (FORE), NOC/SOC-integraatio, OSINT; Zero Trust -periaatteet</li>
+        <li>DevOps ja automaatio: Azure DevOps, IaC, CI/CD, kontit (Docker/K8s)</li>
+        <li>Palvelukehitys ja tuotteistus: palveluportfolion kehittäminen, tuotepakettien kuvaus ja hinnoittelu</li>
+        <li>Työkalut: Office tuoteet, AI, Miro ja tekninen dokumentointi</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Sertifikaatit ja koulutukset</h2>
+      <ul class="certs">
+        <li>Microsoft Azure Fundamentals (AZ-900)</li>
+        <li>Microsoft Certified Systems Engineer – Windows 2000 (MCSE)</li>
+        <li>Kyberturvakoulutukset: SOC, FORE, NOC, OSINT, syventävä peruskurssi</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Työkokemus</h2>
+      <ul>
+        <li><strong>Senior Cloud Advisor / Senior Consultant</strong> – Fujitsu Finland Oy</li>
+        <li><strong>Aiemmat roolit:</strong> Development Manager, Infrastructure Architect, Technical Expert, Service Owner</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Valikoituja projekteja</h2>
+      <ul class="projects">
+        <li>AI-ympäristöjen konsultointi: myyntityökalun suunnittelu ja toteutuksen tuki</li>
+        <li>IT-strategiat: Azure-ympäristön kartoitus, parannusehdotukset, työpajojen fasilitointi</li>
+        <li>Pilvistrategia-työpajat: vision ja tiekartan luominen, governance-suunnittelu</li>
+        <li>IT-strategia hyvinvointialueella: nykytilan kartoitus, tavoitetilan kuvaus</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Toimialakokemus</h2>
+      <ul>
+        <li>Sosiaali- ja terveys</li>
+        <li>Finanssi</li>
+        <li>Julkishallinto</li>
+        <li>Valtionhallinto</li>
+        <li>Puolustus</li>
+        <li>Valmistava teollisuus</li>
+		<li>Historia ja konfliktit</li>
+		<li>Viulun soitto</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Harrastukset</h2>
+      <ul class="hobbies">
+        <li>Tekniikka ja automaatio: tekoäly, kotiautomaatio ja sähköautot (autonomiset)</li>
+        <li>Rakentaminen ja puutarha</li>
+        <li>Liikunta ja ulkoilu</li>
+        <li>Järjestötoiminta</li>
+		<li>Historia ja konfliktit</li>
+		<li>Viulun soittaminen</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Kielitaito</h2>
+      <ul>
+        <li>Suomi – äidinkieli</li>
+        <li>Englanti – hyvä</li>
+        <li>Saksa – perusteet</li>
+	<li>Ruotsi – perusteet</li>
+      </ul>
+    </div>
+
+    <div class="section contact">
+      <h2>Yhteystiedot</h2>
+      <p>
+        Sähköposti: <a href="mailto:tuomas@musku.net">tuomas@musku.net</a><br>
+	Työsähköposti: <a href="mailto:tuomas.levoniemi@fujitsu.com">tuomas.levoniemi@fujitsu.com</a><br>
+<br>
+<center>
+       <a href="https://www.linkedin.com/in/tuokki" class="linkedin-btn" target="_blank">Katso LinkedIn-profiili</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
