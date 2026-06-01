@@ -39,6 +39,34 @@
       margin-right: 8px;
       border: 1px solid #ddd;
     }
+
+    /* PDF-latauspainike ylävasemmalle - FIXED position */
+    .pdf-download {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 1000;
+    }
+    .pdf-download a {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      background-color: white;
+      border: 1px solid #2a4d8f; /* Teeman mukainen sininen */
+      border-radius: 4px;
+      text-decoration: none;
+      color: #2a4d8f;
+      font-weight: bold;
+      font-size: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .pdf-download a:hover {
+      background-color: #f0f7ff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
     
     .container { 
       max-width: 900px; 
@@ -64,6 +92,14 @@
     }
     .linkedin-btn:hover { background: #084a8c; }
     .quote { font-style: italic; color: #555; margin: 18px 0; }
+
+    /* Piilotetaan painikkeet tulostettaessa/PDF-tallennuksessa */
+    @media print {
+      .pdf-download, .english-flag { display: none !important; }
+      body { background: #fff; }
+      .container { box-shadow: none; margin: 0; padding: 0; }
+    }
+
     @media (max-width: 700px) {
       .container { padding: 16px; margin-top: 60px; }
       header { flex-direction: column; gap: 12px; }
@@ -81,11 +117,26 @@
         height: 13px;
         margin-right: 6px;
       }
+      .pdf-download {
+        top: 10px;
+        left: 10px;
+      }
+      .pdf-download a {
+        padding: 4px 8px;
+        font-size: 12px;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Englannin lippu kiinnitetty yläoikealle -->
+
+  <div class="pdf-download">
+    <a href="#" onclick="window.print(); return false;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+      Lataa PDF
+    </a>
+  </div>
+
   <div class="english-flag">
     <a href="https://tuokki2.github.io" target="_blank">
       <img src="https://flagcdn.com/w40/gb.png" alt="Englannin lippu">
@@ -95,7 +146,7 @@
 
   <div class="container">
     <header>
-      <img src="TuomasLevoniemiPalmu.jpg">
+      <img src="TuomasLevoniemiPalmu.jpg" class="profile-img">
       <div>
         <h1>Tuomas Levoniemi</h1>
         <p><strong>Senior Advisor – Helsinki</strong></p>
@@ -120,7 +171,7 @@
         <li>Tietoturva: SOC-käytännöt, forensiikka (FORE), NOC/SOC-integraatio, OSINT; Zero Trust -periaatteet</li>
         <li>DevOps ja automaatio: Azure DevOps, IaC, CI/CD, kontit (Docker/K8s)</li>
         <li>Palvelukehitys ja tuotteistus: palveluportfolion kehittäminen, tuotepakettien kuvaus ja hinnoittelu</li>
-        <li>Työkalut: Office tuoteet, AI, Miro ja tekninen dokumentointi</li>
+        <li>Työkalut: Office tuotteet, AI, Miro ja tekninen dokumentointi</li>
       </ul>
     </div>
 
@@ -170,8 +221,8 @@
         <li>Rakentaminen ja puutarha</li>
         <li>Liikunta ja ulkoilu</li>
         <li>Järjestötoiminta</li>
-		<li>Historia ja konfliktit</li>
-		<li>Viulun soittaminen</li>
+        <li>Historia ja konfliktit</li>
+        <li>Viulun soittaminen</li>
       </ul>
     </div>
 
@@ -181,18 +232,18 @@
         <li>Suomi – äidinkieli</li>
         <li>Englanti – hyvä</li>
         <li>Saksa – perusteet</li>
-	<li>Ruotsi – perusteet</li>
+        <li>Ruotsi – perusteet</li>
       </ul>
     </div>
 
     <div class="section contact">
       <h2>Yhteystiedot</h2>
       <p>
-        Sähköposti: <a href="mailto:tuomas@musku.net">tuomas@musku.net</a><br>
-	<br>
-<center>
-       <a href="https://www.linkedin.com/in/tuokki" class="linkedin-btn" target="_blank">Katso LinkedIn-profiili</a>
+        Sähköposti: <a href="mailto:tuomas@musku.net">tuomas@musku.net</a>
       </p>
+      <div style="text-align: center; margin-top: 20px;">
+        <a href="https://www.linkedin.com/in/tuokki" class="linkedin-btn" target="_blank">Katso LinkedIn-profiili</a>
+      </div>
     </div>
   </div>
 </body>
